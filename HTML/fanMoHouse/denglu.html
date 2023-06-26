@@ -3,15 +3,72 @@
 	<head>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="css/main.css"/>
+		<link rel="stylesheet" href="css/bootstrap.css"/>
 		<title>登录界面</title>
+		<style>
+		    .navbar{
+		        border-radius: 0;
+		    }
+			
+			h1{ color:white;}
+			
+			
+			@font-face {
+							font-family: mao;
+							src: url("fonts/mao.eot"),
+								url("fonts/mao.svg"),
+								url("fonts/mao.ttf"),
+								url("fonts/mao.woff");
+							}
+			@font-face {
+							font-family: xingkai;
+							src: url("fonts/xingkai.TTF");
+							}
+			h1{
+							font-family: xingkai,serif;
+							text-shadow: 2px 2px 3px snow;
+						}
+			p{
+			                font-family: xingkai,serif;
+							text-shadow: 2px 2px 3px snow;
+			            }
+			.dvd{
+			                border: 1px solid #dddddd;
+			                border-radius: 5px;
+			                box-shadow: 5px 5px 20px #aaa;
+			            }
+			
+		</style>
 	</head>
 
-	<body style="background-image: url(images/b1.jpg);">
+	<body style="background-image: url(img/b1.jpg);">
+		<nav class="navbar navbar-default">
+		  <div class="container-fluid">
+		     <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" href="index.html">FanMoHouse</a>
+		    </div>
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav">
+		          <li><a href="index.html">首页</a></li>
+		          <li><a href="yanchanghui.html">演唱会</a></li>
+		          <li><a href="fanyifan.html">翻一翻</a></li>
+		          <li><a href="fangyingting.html">放映厅</a></li>
+		          <li><a href="dawenti.html">回答问题</a></li>
+		      </ul>
+		    </div>
+		  </div>
+		</nav>
 		<div class="dengludiv2">
-			<img src="images/maopao.gif"/>
+			<img src="img/maopao.gif"/>
 		</div>
 		<div class="dengludiv2-1">
-			<img src="images/maopao.gif"/>
+			<img src="img/maopao.gif"/>
 		</div>
 		<div class="dengludiv1">
 			<h1 class="dengludiv3">房猫专属身份登陆</h1>

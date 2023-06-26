@@ -4,181 +4,223 @@
 		<meta charset="utf-8">
 		<title>房猫专属小游戏-翻一翻</title>
 		<link rel="stylesheet" href="css/main.css"/>
+		<link rel="stylesheet" href="css/bootstrap.css"/>
 	</head>
-	<style type="text/css">
-		@font-face {
-		font-family: mao;
-		src: url("fonts/mao.ttf"),
-			url("fonts/mao.svg"),
-			url("fonts/mao.woff"),
-			url("fonts/mao.eot");
-		}
-		@font-face {
-		font-family: xingkai;
-		src: url("fonts/xingkai.ttf");
-		}
-		h1{
-			font-family: xingkai;
-			text-shadow: 2px 2px 3px snow;
-			color:white;
-			
-		}
-	</style>
-	<style>
-		div{}
-		.piclist{
-			
-			float: left;
-		}
-		.picbox{
-			float: left;
-			width:170px;
-			height: 190px;
-			margin: 10px;
-			position:relative;
-			-webkit-transform-style: preserve-3d;
-			-moz-transform-style: preserve-3d;
-			-ms-transform-style: preserve-3d;
-			transform-style: preserve-3d;
-			transition: 1.5s;
-			perspective: 400px;
-			
-		}
 	
-		.picbox1{
-			float: left;
-			width:170px;
-			height: 190px;
-			margin: 10px;
-			position:relative;
-			-webkit-transform-style: preserve-3d;
-			-moz-transform-style: preserve-3d;
-			-ms-transform-style: preserve-3d;
-			transform-style: preserve-3d;
-			transform: rotate(3deg);
-			transition: 1.5s;
-			perspective: 400px;
-		}
-		.picbox:hover{
-			transform: rotateY(180deg);
-		}
-		.face{
-			width: 170px;
-			height: 190px;
-			position:absolute;
-			left:0px;
-			top:0px;
-			backface-visibility: hidden;
-			background-size: 100%;
+	<style>
+				@font-face {
+					font-family: mao;
+					src: url("fonts/mao.eot"),
+						url("fonts/mao.svg"),
+						url("fonts/mao.ttf"),
+						url("fonts/mao.woff");
+					}
+				@font-face {
+					font-family: xingkai;
+					src: url("fonts/xingkai.TTF");
+					}
+				h1{
+					font-family: xingkai,serif;
+					text-shadow: 2px 2px 3px snow;
+				}
+			</style>
+	        <style>
+			div{}
+			.piclist{
+	
+				float: left;
+			}
+			.picbox{
+				float: left;
+				width:170px;
+				height: 190px;
+				margin: 10px;
+				position:relative;
+				-webkit-transform-style: preserve-3d;
+				-moz-transform-style: preserve-3d;
+				-ms-transform-style: preserve-3d;
+				transform-style: preserve-3d;
+				transition: 1.5s;
+				perspective: 400px;
+	
+			}
+			.picbox:hover{
+				transform: rotateY(180deg);
+			}
+			.face{
+				width: 170px;
+				height: 190px;
+				position:absolute;
+				left:0px;
+				top:0px;
+				backface-visibility: hidden;
+				background-size: 100%;
+	
+	
+			}
+			.front{
+	
+				width:170px;
+				height: 190px;
+				background-size: 100%;
+				border: 2px solid ;
+				background-repeat: repeat-y;
+	
+			}
+			.back{
+				border: 2px solid ;
+				transform:  rotateY(180deg);
+				background-repeat:no-repeat;
+			}
+			img{
+				border-image-repeat: round;
+				width: 170px;
+				height: 190px;
+			}
+	
+		</style>
+		<style>
+		    .navbar{
+		        border-radius: 0;
+		    }
+			
+			h1{ color:white;}
 			
 			
-		}
-		.front{
+			@font-face {
+							font-family: mao;
+							src: url("fonts/mao.eot"),
+								url("fonts/mao.svg"),
+								url("fonts/mao.ttf"),
+								url("fonts/mao.woff");
+							}
+			@font-face {
+							font-family: xingkai;
+							src: url("fonts/xingkai.TTF");
+							}
+			h1{
+							font-family: xingkai,serif;
+							text-shadow: 2px 2px 3px snow;
+						}
+			p{
+			                font-family: xingkai,serif;
+							text-shadow: 2px 2px 3px snow;
+			            }
+			.dvd{
+			                border: 1px solid #dddddd;
+			                border-radius: 5px;
+			                box-shadow: 5px 5px 20px #aaa;
+			            }
 			
-			width:170px;
-			height: 190px;
-			background-size: 100%;
-			border: 2px solid ;
-			background-repeat: repeat-y;
-			
-		}
-		.back{
-			border: 2px solid ;
-			transform:  rotateY(180deg);
-			background-repeat:no-repeat;
-		}
-		img{
-			
-			size: 100%;
-			border-image-repeat: round;
-			width: 170px;
-			height: 190px;
-		}
+		</style>
+	<body style="background-image: url(img/b1.jpg);">
+		<nav class="navbar navbar-default">
+		  <div class="container-fluid">
+		     <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" href="index.html">FanMoHouse</a>
+		    </div>
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav">
+		          <li><a href="index.html">首页</a></li>
+		          <li><a href="yanchanghui.html">演唱会</a></li>
+		          <li><a href="fanyifan.html">翻一翻</a></li>
+		          <li><a href="fangyingting.html">放映厅</a></li>
+		          <li><a href="dawenti.html">回答问题</a></li>
+		      </ul>
+		    </div>
+		  </div>
+		</nav>
+		<div class="container">
+		        <div>
+					<h1 id="YYH" style="display: inline;">欢迎来到 房 猫 小 游 戏</h1>
+		        </div>
 		
-	</style>
-	<body style="background-image: url(images/b1.jpg);">
-		<div>
-			<h1 id="YYH" style="display: inline;">欢迎来到</h1>
-			<h1 style="transform: rotate(-5deg);">房 猫 小 游 戏</h1>
-			
-			
-		</div>
-		<div ><a onclick="fanhuizhuhuichang()" class="ycha1">返回主会场</a></div>
-		<div>
-			<h2 style="color:white;">请找出九宫格中最特别的牌底~每次刷新都不一样的哦~点击触发（还在做</h2>
-			<button onclick='changepic()'>点我也可以啊</button>
-			</div>
-		<div class="piclist">
-			<div class="picbox" onclick="fan()">
-				<div class="face front" ><img src="images/1.jpg"/></div>
-				<div class="face back"><img id="back1" src="images/maotou1.png"/></div>	
-			</div>
-			<div class="picbox">
-				<div class="face front" ><img src="images/2.jpg"/></div>
-				<div class="face back"><img id="back2" src="images/maotou1.png"/></div>	
-			</div>
-			<div class="picbox">
-				<div class="face front" ><img src="images/3.jpg"/></div>
-				<div class="face back"><img id="back3" src="images/maotou1.png"/></div>	
-			</div>
-		</div>	
-
-		<div class="piclist" >
-			<div class="picbox">
-				<div class="face front" ><img src="images/4.jpg"/></div>
-				<div class="face back"><img id="back4" src="images/maotou1.png"/></div>		
-			</div>
-			<div class="picbox">
-				<div class="face front" ><img src="images/5.jpg"/></div>
-				<div class="face back"><img id="back5" src="images/a2.gif"/></div>	
-			</div>
-			<div class="picbox">
-				<div class="face front" ><img src="images/6.jpg"/></div>
-				<div class="face back"><img id="back6" src="images/maotou1.png"/></div>	
-			</div>
-		</div>	
+				<div>
+					<h2 style="color:black;">请找出九宫格中最特别的牌底~每次刷新都不一样的哦~点击触发（还在做</h2>
+					<button class="btn btn-primary" onclick='changepic()'>点我也可以啊</button>
+					</div>
+				<div class="piclist container">
+					<div class="picbox" onclick="fan()">
+						<div class="face front" ><img src="img/1.jpg" alt=""/></div>
+						<div class="face back"><img id="back1" src="img/maotou1.png" alt=""/></div>
+					</div>
+					<div class="picbox">
+						<div class="face front" ><img src="img/2.jpg" alt=""/></div>
+						<div class="face back"><img id="back2" src="img/maotou1.png" alt=""/></div>
+					</div>
+					<div class="picbox">
+						<div class="face front" ><img src="img/3.jpg" alt=""/></div>
+						<div class="face back"><img id="back3" src="img/maotou1.png" alt=""/></div>
+					</div>
+				</div>
 		
-		<div class="piclist" >
-			<div class="picbox">
-				<div class="face front" ><img src="images/7.jpg"/></div>
-				<div class="face back"><img id="back7" src="images/maotou1.png"/></div>	
-			</div>
-			<div class="picbox">
-				<div class="face front" ><img src="images/8.jpg"/></div>
-				<div class="face back"><img id="back8" src="images/maotou1.png"/></div>	
-			</div>
-			<div class="picbox">
-				<div class="face front" ><img src="images/9.jpg"/></div>
-				<div class="face back"><img id="back9" src="images/maotou1.png"/></div>	
-			</div>
-		</div>	
+				<div class="piclist container" >
+					<div class="picbox">
+						<div class="face front" ><img src="img/4.jpg" alt=""/></div>
+						<div class="face back"><img id="back4" src="img/maotou1.png" alt=""/></div>
+					</div>
+					<div class="picbox">
+						<div class="face front" ><img src="img/5.jpg" alt=""/></div>
+						<div class="face back"><img id="back5" src="img/a2.gif" alt=""/></div>
+					</div>
+					<div class="picbox">
+						<div class="face front" ><img src="img/6.jpg" alt=""/></div>
+						<div class="face back"><img id="back6" src="img/maotou1.png" alt=""/></div>
+					</div>
+				</div>
+		
+				<div class="piclist container" >
+					<div class="picbox">
+						<div class="face front" ><img src="img/7.jpg" alt=""/></div>
+						<div class="face back"><img id="back7" src="img/maotou1.png" alt=""/></div>
+					</div>
+					<div class="picbox">
+						<div class="face front" ><img src="img/8.jpg" alt=""/></div>
+						<div class="face back"><img id="back8" src="img/maotou1.png" alt=""/></div>
+					</div>
+					<div class="picbox">
+						<div class="face front" ><img src="img/9.jpg" alt=""/></div>
+						<div class="face back"><img id="back9" src="img/maotou1.png" alt=""/></div>
+					</div>
+				</div>
+		    </div>
 
 	</body>
 	<script>
-		var url=location.href;
-		
-		var num=url.indexOf("?");
-		if(num!=-1){
-			var str=url.substr(num+6);
-			var arr=str.split(",");
-			
-			arr=decodeURI(arr)
-			
-			document.getElementById("YYH").innerHTML="欢迎亲爱的"+arr+"来到";
-		}
-		
-		var num1=Math.random();
-		num1=Math.ceil(num1*9);//1-9
+	var num1=Math.random();
+			num1=Math.ceil(num1*9);//1-9
+			//document.getElementById("back"+"1").src="images/maotou2.png";
+			for(i=1;i<=9;i++){
+				if(i==num1){
+					document.getElementById("back"+i.toString()).src="img/a2.gif";
+				}else{
+					document.getElementById("back"+i.toString()).src="img/maotou1.png";
+				}
+			}
+	</script>
+	    <script>
+	        function changepic(){
+		var num=Math.random();
+		num=Math.ceil(num*9);//1-9
 		//document.getElementById("back"+"1").src="images/maotou2.png";
 		for(i=1;i<=9;i++){
-			if(i==num1){
-				document.getElementById("back"+i.toString()).src="images/a2.gif";
+			if(i==num){
+				document.getElementById("back"+i.toString()).src="img/a2.gif";
 			}else{
-				document.getElementById("back"+i.toString()).src="images/maotou1.png";
+				document.getElementById("back"+i.toString()).src="img/maotou1.png";
 			}
 		}
-		
-		
-	</script>
-	<script src="js/main.js"></script>
+	}
+	function fan(){
+	
+		document.getElementById("picbox1").style.transform='rotate(7deg)';
+		alert("凡成功了")
+	}
+	    </script>
 </html>
