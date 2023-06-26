@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>房猫知识小课堂</title>
+		<script src="js/jquery.js"></script>
+		<script src="js/main.js"></script>
+		<link rel="stylesheet" href="css/main.css"/>
+		<style>
+			h2{
+				color:white;
+			}
+			@font-face {
+			font-family: xingkai;
+			src: url("fonts/xingkai.ttf");
+			}
+			h1{
+				font-family: xingkai;
+				text-shadow: 2px 2px 3px snow;
+				color:white;
+				
+			}
+		</style>
+	</head>
+	<body style="background-image: url(images/b1.jpg);">
+		<div >
+			<h1 id="YYH" style="display: inline;">欢迎来到</h1>
+			<h1 style="transform: rotate(-5deg);">房猫知识问答 功能后续ing~最后实现选择按钮</h1>
+		
+		</div>
+		<div ><a onclick="fanhuizhuhuichang()" class="ycha1">返回主会场</a></div>
+		
+		<div style="text-align: center;height:250px">
+			<h2 id="dawenti1">问题</h2>
+			<h2 id="dawenti2">A选项</h2>
+			<h2 id="dawenti3">B选项</h2>
+			<h2 id="dawenti4">C选项</h2>
+			<h2 id="dawenti5">D选项</h2>
+		</div>
+		<div style="text-align: center;"><h2>你的答案是：</h2><input type="text" id="get" /></div>
+			<h2 id="dawenti6" style="text-align: center;">答案</h2>
+		<div style="text-align: center;">
+			<button onclick="begin()" >开始答题</button>
+			<button onclick="xianshi()" >显示答案</button>
+			<button onclick="jieshu()" >结束答题</button>
+		</div>
+		
+	</body>
+	<script>
+		var url=location.href;
+		
+		var num=url.indexOf("?");
+		if(num!=-1){
+			var str=url.substr(num+6);
+			var arr=str.split(",");
+			
+			arr=decodeURI(arr)
+			
+			document.getElementById("YYH").innerHTML="欢迎亲爱的"+arr+"来到";
+		}
+		a=$.ajax({
+						url: "dawenti.json",//json文件位置，文件名
+						type: "GET",//请求方式为get
+						dataType: "json", //返回数据格式为json
+						async: false,
+						success: function(data) {//请求成功完成后要执行的方法 
+						   }
+						});
+		var result=$.parseJSON(a["responseText"])
+		var num_right=0;
+		var num_wrong=0;
+		var word="";
+		function begin(){
+			num1=Math.random();
+			num1=Math.ceil(num1*result.length);
+			
+			document.getElementById("dawenti1").innerHTML=result[num1-1]['问题'];
+			document.getElementById("dawenti2").innerHTML="A."+result[num1-1]['A'];
+			document.getElementById("dawenti3").innerHTML="B."+result[num1-1]['B'];
+			document.getElementById("dawenti4").innerHTML="C."+result[num1-1]['C'];
+			document.getElementById("dawenti5").innerHTML="D."+result[num1-1]['D'];
+			
+			
+		}
+		function xianshi(){
+			document.getElementById("dawenti6").innerHTML=result[num1-1]['答案'];
+			if(document.getElementById("get").value==result[num1-1]['答案']){
+				document.getElementById("dawenti6").innerHTML="你是对的，答案是："+result[num1-1]['答案'];
+				num_right+=1;
+			}else{
+				document.getElementById("dawenti6").innerHTML="对不起，你答错啦，答案是："+result[num1-1]['答案'];
+				num_wrong+=1
+			}
+		}
+		function jieshu(){
+			num_percent=num_right/(num_right+num_wrong);
+			if(num_percent>=0.5){
+				word="你果然是真爱粉";
+			}else{
+				word="你还要在努力啊"
+			}
+			document.getElementById("dawenti6").innerHTML='你的正确率为:'+num_percent.toString()+" "+word;
+		}
+	</script>
+</html>

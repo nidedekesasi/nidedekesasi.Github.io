@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+		
+		<title>欢迎来到我的房猫</title>
+		    <!-- 引入字体图标库 -->
+		<link rel="stylesheet" href="/fonts/css/font-awesome.css">
+		<link rel="stylesheet" href="css/133.css">
+		<link rel="stylesheet" href="css/main.css"/>
+		    <!-- 这个案例用到的是vue的语法 -->
+		<script src="/js/vue.min.js"></script>
+		
+		<style>
+			@font-face {
+				font-family: xingkai;
+				src: url("fonts/xingkai.ttf");
+				}
+			p{
+				font-family: xingkai;
+			}
+		</style>
+		
+
+		
+		
+	</head>
+	<body style="background-image: url(images/b1.jpg);background-size: 100%;">
+		
+			<div class="container" >
+					
+					<div class="item active" style="background-image: url(images/1.jpg);">
+						<div class="shadow"></div>
+						<div class="content">
+							<div class="icon" style="background-image: url(images/maotou1.png);">
+								<i class="fa fa-sun-o"></i>
+							</div>
+							<div class="text">
+								<div class="tit"><p>房东的猫</p></div>
+								<div class="sub">我笑起来真好看</div>
+							</div>
+						</div>
+					</div>
+					<div class="item" style="background-image: url(images/2.jpg);">
+						<div class="shadow"></div>
+						<div class="content">
+							<div class="icon" style="background-image: url(images/maotou2.png);">
+								<i class="fa fa-cloud"></i>
+							</div>
+							<div class="text">
+								<div class="tit"><p >房西的猫</p></div>
+								<div class="sub">听我唱歌吧！</div>
+							</div>
+						</div>
+					</div>
+					<div class="item" style="background-image: url(images/3.jpg);">
+						<div class="shadow"></div>
+						<div class="content">
+							<div class="icon" style="background-image: url(images/maotou3.png);">
+								<i class="fa fa-tint"></i>
+							</div>
+							<div class="text">
+								<div class="tit"><p>房南的猫</p></div>
+								<div class="sub">浪漫至死不渝</div>
+							</div>
+						</div>
+					</div>
+					<div class="item" style="background-image: url(images/4.jpg);">
+						<div class="shadow"></div>
+						<div class="content">
+							<div class="icon" style="background-image: url(images/maotou4.png);">
+								<i class="fa fa-bolt"></i>
+							</div>
+							<div class="text">
+								<div class="tit"><p>房北的猫</p></div>
+								<div class="sub">看镜头</div>
+							</div>
+						</div>
+					</div>
+					<div class="item" style="background-image: url(images/5.jpg);">
+						
+						<div class="shadow"></div>
+						<div class="content">
+							<div class="icon" style="background-image: url(images/maotou5.png);">
+								<i class="fa fa-snowflake-o"></i>
+							</div>
+							<div class="text">
+								<div class="tit"><p>房顶的猫</p></div>
+								<div class="sub">叫我干啥啊</div>
+								
+							</div>
+						</div>
+					</div>
+					<div class="item" style="background-image: url(images/6.jpg);">
+						
+						<div class="shadow"></div>
+						<div class="content">
+							<div class="icon" style="background-image: url(images/maotou4.png);">
+								<i class="fa fa-snowflake-o"></i>
+							</div>
+							<div class="text">
+								<div class="tit"><p>房梁的猫</p></div>
+								<div class="sub">弹琴给你听啊</div>
+								
+							</div>
+						</div>
+					</div>
+					<div class="item" style="background-image: url(images/7.jpg);">
+						
+						<div class="shadow"></div>
+						<div class="content">
+							<div class="icon" style="background-image: url(images/maotou3.png);">
+								<i class="fa fa-snowflake-o"></i>
+							</div>
+							<div class="text">
+								<div class="tit"><p>房外的猫</p></div>
+								<div class="sub">烟火好美啊</div>
+								
+							</div>
+						</div>
+					</div>
+					<div class="item" style="background-image: url(images/8.jpg);">
+						
+						<div class="shadow"></div>
+						<div class="content">
+							<div class="icon" style="background-image: url(images/maotou2.png);">
+								<i class="fa fa-snowflake-o"></i>
+							</div>
+							<div class="text">
+								<div class="tit"><p>房下的猫</p></div>
+								<div class="sub">嘿，生活愉快</div>
+								
+							</div>
+						</div>
+					</div>
+					<div class="item" style="background-image: url(images/9.jpg);">
+						
+						<div class="shadow"></div>
+						<div class="content">
+							<div class="icon" style="background-image: url(images/maotou1.png);">
+								<i class="fa fa-snowflake-o"></i>
+							</div>
+							<div class="text">
+								<div class="tit"><p>房门的猫</p></div>
+								<div class="sub">一切都好吧</div>
+								
+							</div>
+						</div>
+					</div>
+			</div>
+			<div classs="main">
+				<audio id="music" src="music/请你一定要记得我.mp3" autoplay="autoplay" loop="loop">你的浏览器不支持audio标签。</audio>
+				
+				<a id="audio_btn"><img src="images/a2.gif"  id="music_btn" width="48" height="50"border="0" alt="暂无"/></a>    
+				
+				<script>    
+				$("#audio_btn").click(function(){    				
+				    var music = document.getElementById("music");    
+				    if(music.paused){    	
+				        music.play();    
+				        $("#music_btn").attr("src","images/a2.gif");    
+				    }else{    
+				        music.pause();    
+				        $("#music_btn").attr("src","images/a2.gif");    
+				    }    
+				});    
+				</script>
+				
+				<div><a href="denglu.html" id="denglu" style="color:white;">您尚未登录，请登录您的账号</a>
+					<h3 id="YH" style="color:white;"></h3>
+					<a href="index.html" id="tuichudenglu" style="color:white;">退出登录</a>
+				</div>
+				<div class="indexdiv1"><button class="indexbut1" onclick="yanchanghui()" >go to 演唱会</button></div>
+				<div class="indexdiv1"><button class="indexbut1" onclick="tinggewyy()" >go to 网易云</button></div>
+				<div class="indexdiv1" ><button class="indexbut1" onclick="quweibo()" >go to 猫微博</button></div>
+				<div class="indexdiv1" ><button class="indexbut1" onclick="fanyifan()" >go to 翻一翻</button></div>
+				<div class="indexdiv1" ><button class="indexbut1" onclick="fangyingting()" >go to 放映厅</button></div>
+				<div class="indexdiv1" ><button class="indexbut1" onclick="dawenti()" >go to 答问题</button></div>
+			</div>	
+			
+		
+		
+		
+	</body>
+	<script src="js/133.js"></script>
+	<script>
+		var url=location.href;
+		
+		var num=url.indexOf("?");
+		
+		/*last 62 length 68 index */
+		/* or and (url.length-url.indexIndexOf("?"))>=5*/
+		if(num!=-1 ){
+			var str=url.substr(num+6);
+			var arr=str.split(",");
+			
+			arr=decodeURI(arr)
+			if(arr != null ){
+				document.getElementById("denglu").hidden=true;
+				document.getElementById("tuichudenglu").hidden=false;
+			}else{
+				document.getElementById("denglu").hidden=false;
+				document.getElementById("tuichudenglu").hidden=true;
+			}
+			document.getElementById("YH").innerHTML="欢迎您，亲爱的"+arr;
+		}else{
+			document.getElementById("tuichudenglu").hidden=true;
+		}
+		
+		
+		
+		
+		
+	</script>
+	<script src="js/main.js"></script>
+</html>
+

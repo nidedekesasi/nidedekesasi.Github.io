@@ -1,0 +1,122 @@
+
+a{
+	color: white;
+	font-size: :22px;
+	}
+.denglua1{
+	display: inline-block;
+	width:80px;
+	height: 30px;
+	font-size: 14px;
+	text-align: center;
+	line-height: 30px;
+	text-decoration: none;
+	border-bottom: 1px solid;
+}
+a:hover{
+	font-size: 120%;
+}
+.denglua1:hover{
+	color: pink;
+	background-color: grey;
+	border-buttom: 1px solid;
+	
+}
+.tuichudenglu:hover{}
+.ycha1{display: block;text-align:right;}
+.ycha2{
+	display:inline-block;
+	width: 200px;
+
+}
+.ycha2:hover{
+	color:pink;
+	display:inline-block;
+	font-size: 120%;
+	}
+div{}
+.ychdiv1{alien="center";}
+.ychdiv2{alien="left";}
+.ychdiv3{
+	background-color: lightblue;
+	text-align:center;
+	border-top-left-radius: 20px 30px;
+	border-top-right-radius: 20px 30px;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	border: 1px solid; 
+	box-shadow: 10px 10px 5px #888;
+}
+.indexdiv1{
+	margin-top: 15px;
+}
+.icon{
+	background-size: 100%;
+	background-repeat: no-repeat;
+	text-align: center;
+}
+.dengludiv1{text-align: center;}
+.dengludiv2{
+	position: fixed;
+	z-index: 999;
+	
+	transition:all;
+}
+.dengludiv2:hover{
+	
+	left:800px;
+	
+}
+@keyframes fanzhuan
+{
+	0%   {transform: rotateX(45deg);}
+	30%  {transform: rotateY(45deg);}
+	60%  {transform: rotateZ(45deg);}
+	100% {transform: rotate3d(45deg);}
+	
+}
+.dengludiv2-1{
+	
+	position:absolute;
+	top:300px;
+	z-index:1000;
+	transform-style: preserve-3d;
+	perspective: 10000px;
+}
+.dengludiv2-1:hover{
+	
+	animation: fanzhuan 4s linear;
+}
+img{}
+p{color:white;}
+span{
+	color:pink;
+}
+#nav{
+	width:300px;
+	margin:100px auto;
+	font-size: 0;
+}
+button{}
+.indexbut1{
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	border: 1px solid;
+}
+.indexbut1:hover{
+	color:white;
+	transform:scale(1.2);
+}
+@keyframes mycolor
+{
+	0%  {background-color: red;transform:scale(0.8);}
+	30%{background-color: blue;transform:scale(0.6);}
+	60%{background-color: black;transform:scale(0.4);}
+	100%{background-color: white;transform:scale(0.2);}
+}
+.dengludiv3:hover{
+	animation: mycolor 5s linear;
+}
+

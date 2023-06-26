@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>房猫演唱会</title>
+		<link rel="stylesheet" href="css/main.css"/>
+		<style>
+			h1{ color:white;} 
+		</style>
+		<style type="text/css">
+			@font-face {
+				font-family: mao;
+				src: url("fonts/mao.ttf"),
+					url("fonts/mao.svg"),
+					url("fonts/mao.woff"),
+					url("fonts/mao.eot");
+				}
+			@font-face {
+				font-family: xingkai;
+				src: url("fonts/xingkai.ttf");
+				}
+			h1{
+				font-family: xingkai;
+				text-shadow: 2px 2px 3px snow;
+				
+			}
+		</style>
+	</head>
+	<body style="background-image: url(images/b1.jpg);background-repeat: repeat;">
+		<div>
+			<h1 id="YYH" style="display: inline;">欢迎来到</h1>
+			<h1 style="transform: rotate(-5deg);">房 猫 演 唱 会</h1>
+			
+			
+		</div>
+		
+		<div ><a onclick="fanhuizhuhuichang()" class="ycha1">返回主会场</a></div>
+		<div class="ychdiv3">
+			<h3 style="color:white">房东的猫，中国内地女子双人唱作二人组合，由吉他手<strong><span>吴佩岭</span></strong>和主唱<strong><span>王心怡</span></strong>组成。</h3>
+			<p>2013年，房东的猫正式成立。2015年，在网易云音乐发表第一首原创单曲《秋酿》获得了一定的关注度 [1]  ；同年，在网络上发布了翻唱宋冬野的歌曲《斑马斑马》 [1]  。2017年，推出组合首张同名专辑《房东的猫》 [2]  ；同年，为动漫番剧《我是江小白》演唱片尾曲《云烟成雨》 [3]  。2018年，推出组合第二张专辑《柔软》 [1]  ；同年，获得“硬地围炉夜·2017年度网易云音乐原创盛典”年度新人奖 [4]  。2019年1月6日，获得Q China2018年度音乐盛典最佳独立音乐团体奖 [5]  ；1月20日，获得“硬地围炉夜·2018年度网易云音乐原创盛典”年度组合奖 [6]  。</p>
+			<pre>    中南财经政法大学    </pre>
+		</div>
+		
+		<!--<a href="#">#</a>-->
+		<!--<a href="#"></a><a href="#"></a><a href="#"></a>--><!--a*3----h2+p*3-->
+		<!--p*4>img+a-->
+		<hr /><!----->
+		
+		<div class="ychdiv2" style="float: left;width: 30;">
+				<h3 style="color: white;">请选择</h3>
+				
+				<a onclick="one()" class="ycha2">关于彻夜不眠的事情 济南 2021.12.22</a><br />
+				<a onclick="two()" class="ycha2">你我 七周年</a><br />
+				<a onclick="three()" class="ycha2">关于彻夜不眠的事情 西安</a><br />
+				<a onclick="four()" class="ycha2">由于时间和地域的关系 南京</a><br />
+				<a onclick="five()" class="ycha2">生活 郑州</a><br />
+				<a onclick="six()" class="ycha2">关于彻夜不眠的事情 长沙</a><br />
+				<a onclick="seven()" class="ycha2">实体专辑首发见面会</a><br />
+				<a onclick="eight()" class="ycha2">踏青音乐会 2020.4.26</a><br />
+				<a onclick="nine()" class="ycha2">由于时间和地域的关系 上海</a><br />
+				<a onclick="ten()" class="ycha2">春酒 厦门 2017.3.19</a><br />
+				<a onclick="eleven()" class="ycha2">YY直播 2020.5.6</a><br />
+				<a onclick="twelve()" class="ycha2">武汉跨年演唱会</a><br />
+				<a onclick="thirteen()" class="ycha2">斗鱼民谣季</a><br />
+				<a onclick="fourteen()" class="ycha2">关于彻夜不眠的事情 广州 2021.11.23</a><br />
+				
+				<audio id="music" src="music/请你一定要记得我.mp3" autoplay="autoplay" loop="loop">你的浏览器不支持audio标签。</audio>
+	
+		</div>
+		
+		<div id="desdiv" style="float: right;">
+			<h6>这里要播放</h6>
+		</div>
+		
+	</body>
+	
+	<script>
+		var url=location.href;
+		var num=url.indexOf("?");
+		if(num!=-1){
+			var str=url.substr(num+6);
+			var arr=str.split(",");
+			
+			arr=decodeURI(arr)
+			
+			document.getElementById("YYH").innerHTML="欢迎亲爱的"+arr+"来到";
+		}
+			
+	</script>
+	<script src="js/main.js"></script>
+</html>
