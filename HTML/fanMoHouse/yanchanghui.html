@@ -135,10 +135,7 @@
 
             <div class="btn-group" style="float: right;">
                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">这是房东的猫匣子<span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                    
-                        <button onclick="click()"  the_net="https://www.bilibili.com/video/BV1Nu41127b8?p=2&spm_id_from=pageDriver" class="btn btn-default btn-edit">来啦来啦</button>
-                    
+                <ul class="dropdown-menu" id="yanchanghuiNet">
                 </ul>
             </div>
 		</div>
@@ -156,7 +153,25 @@
 <script src="js/jquery.js"></script>
 <script src="plugins/bootstrap-3.4.1/js/bootstrap.js"></script>
 <script>
-
+		a=$.ajax({
+						url: "yanchanghui.json",//json文件位置，文件名
+						type: "GET",//请求方式为get
+						dataType: "json", //返回数据格式为json
+						async: false,
+						success: function(data) {//请求成功完成后要执行的方法 
+						
+						   }
+						});
+		var result=$.parseJSON(a["responseText"]);
+		var html="";
+		alert(result.length)
+		for(var i=0;i<parseInt(result.length);i++){
+			a_html="<button onclick='click()'  the_net='"+result[i]['网址']+"' class='btn btn-default btn-edit'>"+result[i]['标题']+"</button>"
+			html=html+a_html;
+		}
+		//
+		document.getElementById('yanchanghuiNet').innerHTML=html;
+		
         $('.btn-edit').click(function () {
             var the_net=$(this).attr('the_net')
             document.getElementById('dvd').src=the_net
