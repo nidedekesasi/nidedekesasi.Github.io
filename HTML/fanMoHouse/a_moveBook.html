@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Card Swiper</title>
+  <link rel="stylesheet" href="../../styles/library/swiper.min.css"/>  
   <style>
 	  * {
 	    margin: 0;
@@ -399,26 +400,26 @@
   <script>
 	  // DOM
 	  const swiper = document.querySelector('#swiper');
-	  const like = document.querySelector('#like');
-	  const dislike = document.querySelector('#dislike');
+	  // const like = document.querySelector('#like');
+	  // const dislike = document.querySelector('#dislike');
 	  
 	  // constants
-	  const urls = [
-	 //    'https://github.com/nidedekesasi/nidedekesasi.Github.io/blob/master/HTML/fanMoHouse/img/1.jpg',
-		// 'https://github.com/nidedekesasi/nidedekesasi.Github.io/blob/master/HTML/fanMoHouse/img/2.jpg',
-		// 'https://github.com/nidedekesasi/nidedekesasi.Github.io/blob/master/HTML/fanMoHouse/img/3.jpg',
-		// 'https://github.com/nidedekesasi/nidedekesasi.Github.io/blob/master/HTML/fanMoHouse/img/4.jpg',
-		// 'https://github.com/nidedekesasi/nidedekesasi.Github.io/blob/master/HTML/fanMoHouse/img/5.jpg',
-		// 'https://github.com/nidedekesasi/nidedekesasi.Github.io/blob/master/HTML/fanMoHouse/img/6.jpg',
-		// 'https://github.com/nidedekesasi/nidedekesasi.Github.io/blob/master/HTML/fanMoHouse/img/7.jpg',
-		// 'https://github.com/nidedekesasi/nidedekesasi.Github.io/blob/master/HTML/fanMoHouse/img/8.jpg',
-		// 'https://github.com/nidedekesasi/nidedekesasi.Github.io/blob/master/HTML/fanMoHouse/img/9.jpg',
-		// 'https://source.unsplash.com/random/1000x1000/?sky',
-	 //    'https://source.unsplash.com/random/1000x1000/?landscape',
-	 //    'https://source.unsplash.com/random/1000x1000/?ocean',
-	 //    'https://source.unsplash.com/random/1000x1000/?moutain',
-	 //    'https://source.unsplash.com/random/1000x1000/?forest'
-	  ];
+	 //  const urls = [
+	 // //    'https://github.com/nidedekesasi/nidedekesasi.Github.io/blob/master/HTML/fanMoHouse/img/1.jpg',
+		// // 'https://github.com/nidedekesasi/nidedekesasi.Github.io/blob/master/HTML/fanMoHouse/img/2.jpg',
+		// // 'https://github.com/nidedekesasi/nidedekesasi.Github.io/blob/master/HTML/fanMoHouse/img/3.jpg',
+		// // 'https://github.com/nidedekesasi/nidedekesasi.Github.io/blob/master/HTML/fanMoHouse/img/4.jpg',
+		// // 'https://github.com/nidedekesasi/nidedekesasi.Github.io/blob/master/HTML/fanMoHouse/img/5.jpg',
+		// // 'https://github.com/nidedekesasi/nidedekesasi.Github.io/blob/master/HTML/fanMoHouse/img/6.jpg',
+		// // 'https://github.com/nidedekesasi/nidedekesasi.Github.io/blob/master/HTML/fanMoHouse/img/7.jpg',
+		// // 'https://github.com/nidedekesasi/nidedekesasi.Github.io/blob/master/HTML/fanMoHouse/img/8.jpg',
+		// // 'https://github.com/nidedekesasi/nidedekesasi.Github.io/blob/master/HTML/fanMoHouse/img/9.jpg',
+		// // 'https://source.unsplash.com/random/1000x1000/?sky',
+	 // //    'https://source.unsplash.com/random/1000x1000/?landscape',
+	 // //    'https://source.unsplash.com/random/1000x1000/?ocean',
+	 // //    'https://source.unsplash.com/random/1000x1000/?moutain',
+	 // //    'https://source.unsplash.com/random/1000x1000/?forest'
+	 //  ];
 	  
 	  // variables
 	  let cardCount = 0;
@@ -426,16 +427,16 @@
 	  // functions
 	  function appendNewCard() {
 	    const card = new Card({
-	      imageUrl: urls[cardCount % 5],
+	      // imageUrl: urls[cardCount % 5],
 	      onDismiss: appendNewCard,
-	      onLike: () => {
-	        like.style.animationPlayState = 'running';
-	        like.classList.toggle('trigger');
-	      },
-	      onDislike: () => {
-	        dislike.style.animationPlayState = 'running';
-	        dislike.classList.toggle('trigger');
-	      }
+	      // onLike: () => {
+	      //   like.style.animationPlayState = 'running';
+	      //   like.classList.toggle('trigger');
+	      // },
+	      // onDislike: () => {
+	      //   dislike.style.animationPlayState = 'running';
+	      //   dislike.classList.toggle('trigger');
+	      // }
 	    });
 	    swiper.append(card.element);
 	    cardCount++;
@@ -446,16 +447,17 @@
 	    });
 	  }
 	  
-	  // first 5 cards
-	  for (let i = 0; i < 5; i++) {
+	  // first 2 cards
+	  for (let i = 0; i < 2; i++) {
 	    appendNewCard();
 	  }
   </script>
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
-  <script src="http://d3js.org/d3.v3.js"></script>
-    
+  <!-- <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script> -->
+  <!-- <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> -->
+  <!-- <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script> -->
+  <!-- <script src="http://d3js.org/d3.v3.js"></script> -->
+    <script src="../../scripts/common/swiper-3.3.1.min.js"></script>  
+    <script src="../../scripts/common/swiper.animate.min.js"></script> 
    
   
 </body>
